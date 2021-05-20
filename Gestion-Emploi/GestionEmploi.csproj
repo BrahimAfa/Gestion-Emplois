@@ -153,6 +153,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105200056429_init.cs" />
+    <Compile Include="Migrations\202105200056429_init.designer.cs">
+      <DependentUpon>202105200056429_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Annee.cs" />
     <Compile Include="Models\Cour.cs" />
     <Compile Include="Models\DetailEmplois.cs" />
@@ -222,6 +227,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105200056429_init.resx">
+      <DependentUpon>202105200056429_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

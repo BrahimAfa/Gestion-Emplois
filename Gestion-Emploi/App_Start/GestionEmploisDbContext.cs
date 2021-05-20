@@ -9,7 +9,7 @@ using GestionEmploi.Models;
 namespace GestionEmploi.App_Start {
   public class GestionEmploisDbContext : DbContext,IDbContext
   {
-    public GestionEmploisDbContext():base("GestionEmplois2")
+    public GestionEmploisDbContext():base("GestionEmplois")
     {
     
     }
