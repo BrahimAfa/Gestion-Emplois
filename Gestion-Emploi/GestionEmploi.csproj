@@ -167,7 +167,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Impl\FiliereService.cs" />
     <Compile Include="Services\IDAO.cs" />
-    <Compile Include="Services\IFiiereService.cs" />
+    <Compile Include="Services\IFiliereService.cs" />
     <Compile Include="Services\Impl\SemainService.cs" />
   </ItemGroup>
   <ItemGroup>
