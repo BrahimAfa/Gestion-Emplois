@@ -144,11 +144,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\GestionEmploisDbContext.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IDbContext.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\AcceuilController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +178,50 @@
     <Compile Include="Services\Impl\SemainService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\ensas.jpg" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\vendor\aos\aos.css" />
+    <Content Include="assets\vendor\aos\aos.js" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\vendor\boxicons\css\animations.css" />
+    <Content Include="assets\vendor\boxicons\css\boxicons.css" />
+    <Content Include="assets\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="assets\vendor\boxicons\css\transformations.css" />
+    <Content Include="assets\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="assets\vendor\counterup\counterup.min.js" />
+    <Content Include="assets\vendor\icofont\icofont.min.css" />
+    <Content Include="assets\vendor\isotope-layout\isotope.pkgd.js" />
+    <Content Include="assets\vendor\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="assets\vendor\jquery.easing\jquery.easing.min.js" />
+    <Content Include="assets\vendor\jquery\jquery.min.js" />
+    <Content Include="assets\vendor\owl.carousel\assets\ajax-loader.gif" />
+    <Content Include="assets\vendor\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="assets\vendor\owl.carousel\assets\owl.carousel.min.css" />
+    <Content Include="assets\vendor\owl.carousel\assets\owl.theme.default.css" />
+    <Content Include="assets\vendor\owl.carousel\assets\owl.theme.default.min.css" />
+    <Content Include="assets\vendor\owl.carousel\assets\owl.theme.green.css" />
+    <Content Include="assets\vendor\owl.carousel\assets\owl.theme.green.min.css" />
+    <Content Include="assets\vendor\owl.carousel\assets\owl.video.play.png" />
+    <Content Include="assets\vendor\owl.carousel\owl.carousel.js" />
+    <Content Include="assets\vendor\owl.carousel\owl.carousel.min.js" />
+    <Content Include="assets\vendor\remixicon\remixicon.css" />
+    <Content Include="assets\vendor\remixicon\remixicon.svg" />
+    <Content Include="assets\vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="assets\vendor\venobox\venobox.css" />
+    <Content Include="assets\vendor\venobox\venobox.js" />
+    <Content Include="assets\vendor\venobox\venobox.min.css" />
+    <Content Include="assets\vendor\venobox\venobox.min.js" />
+    <Content Include="assets\vendor\waypoints\jquery.waypoints.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -186,6 +232,30 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="assets\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="assets\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="assets\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="assets\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="assets\vendor\icofont\fonts\icofont.woff" />
+    <Content Include="assets\vendor\icofont\fonts\icofont.woff2" />
+    <Content Include="assets\vendor\jquery\jquery.min.map" />
+    <Content Include="assets\vendor\owl.carousel\LICENSE" />
+    <Content Include="assets\vendor\owl.carousel\README.md" />
+    <Content Include="assets\vendor\remixicon\remixicon.eot" />
+    <Content Include="assets\vendor\remixicon\remixicon.less" />
+    <Content Include="assets\vendor\remixicon\remixicon.ttf" />
+    <Content Include="assets\vendor\remixicon\remixicon.woff" />
+    <Content Include="assets\vendor\remixicon\remixicon.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -211,9 +281,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Acceuil\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
