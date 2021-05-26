@@ -6,10 +6,13 @@ using System.Data.Entity;
 using System.Data;
 
 using GestionEmploi.Models;
+using GestionEmploi.Utils;
+
 namespace GestionEmploi.App_Start {
   public class GestionEmploisDbContext : DbContext,IDbContext
   {
-    public GestionEmploisDbContext():base("GestionEmplois")
+    static Config config = FileUtils.LoadJson();
+    public GestionEmploisDbContext():base(config.ConnectionString)
     {
     
     }
