@@ -1,5 +1,6 @@
 using GestionEmploi.Models;
 using GestionEmploi.Services;
+using GestionEmploi.Services.Impl;
 using System;
 using System.Web.Mvc;
 using Unity;
@@ -17,6 +18,7 @@ namespace GestionEmploi.App_Start
             container.RegisterSingleton<IDbContext, GestionEmploisDbContext>();
 
             container.RegisterType<IFiliereService, FiliereService>();
+            container.RegisterType<IDAO<Semaine>, SemainService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
         }

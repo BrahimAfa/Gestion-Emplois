@@ -23,17 +23,20 @@ namespace GestionEmploi.Services.Impl
 
     public bool delete(int id)
     {
-      throw new NotImplementedException();
+            var sem = db.Semaines.Where<Semaine>(x => x.SemaineId == id).First();
+            db.Semaines.Remove(sem);
+            return db.SaveChanges() > 0;
     }
 
     public List<Semaine> getAll()
     {
-      throw new NotImplementedException();
+            return db.Semaines.ToList();
     }
 
     public Semaine getById(int id)
     {
-      throw new NotImplementedException();
+            var  sem = db.Semaines.Where<Semaine>(x => x.SemaineId == id).First();
+            return sem;
     }
 
     public bool update(Semaine entity)

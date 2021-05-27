@@ -1,0 +1,16 @@
+﻿@model GestionEmploi.Models.Semaine
+@{
+    ViewBag.Title = "Semaine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Semaine</h2>
+@using(Html.BeginForm("StudentAdd","Student",FormMethod.Post))
+            {
+                <div class="container">
+                    <div class="form-group">
+                        <label>Libelle</label>
+                        @Html.TextBoxFor(x=>x.libelle,new { @class="form-control"})
+                    </div>
+                </div>
+            }
