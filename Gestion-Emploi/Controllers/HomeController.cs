@@ -17,9 +17,9 @@ namespace GestionEmploi.Controllers
     {
       this.dao = dao;
     }
-    public string Index()
+    public ActionResult Index()
     {
-      return dao.getAll().Count.ToString();
+      return View();
     }
 
     public ActionResult About()
