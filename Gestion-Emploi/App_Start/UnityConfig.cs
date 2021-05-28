@@ -18,7 +18,7 @@ namespace GestionEmploi.App_Start
             container.RegisterSingleton<IDbContext, GestionEmploisDbContext>();
 
             container.RegisterType<IFiliereService, FiliereService>();
-            container.RegisterType<IDAO<Semaine>, SemainService>();
+            container.RegisterType<ISemaineService, SemainService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
         }

@@ -5,12 +5,46 @@
 }
 
 <h2>Semaine</h2>
-@using(Html.BeginForm("StudentAdd","Student",FormMethod.Post))
+@using (Html.BeginForm("SemaineAdd", "Semaine", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            @if (Model != null && Model.SemaineId > 0)
             {
-                <div class="container">
-                    <div class="form-group">
-                        <label>Libelle</label>
-                        @Html.TextBoxFor(x=>x.libelle,new { @class="form-control"})
-                    </div>
-                </div>
+                @Html.HiddenFor(x => x.SemaineId)
             }
+            <label>Libelle</label>
+            @Html.TextBoxFor(x => x.libelle, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Date de début</label>
+            @Html.EditorFor(x => x.DateDebut, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.DateDebut, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label>Date de fin</label>
+            @Html.EditorFor(x => x.DateFin, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.DateFin, "", new { @class = "text-danger" })
+        </div>
+
+            <input type="submit" value="Ajouter" class="btn btn-primary" />
+            <input type="reset" value="cancel" class="btn btn-danger" />
+    </div>
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+
+     $(document).ready(function () {
+         $('input[type=datetime]').datepicker({
+             dateFormat: "dd/M/yy",
+             changeMonth: true,
+             changeYear: true,
+             yearRange: "-60:+0"
+         });
+
+     });
+    </script>
+}

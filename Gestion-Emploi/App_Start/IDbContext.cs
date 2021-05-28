@@ -21,5 +21,5 @@ namespace GestionEmploi.App_Start
     DbSet<Seance> Seances { get; set; }
     DbSet<Semaine> Semaines { get; set; }
     int SaveChanges();
-  }
+    }
 }

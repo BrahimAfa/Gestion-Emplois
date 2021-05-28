@@ -2,12 +2,13 @@
 using GestionEmploi.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace GestionEmploi.Services.Impl
 {
-  public class SemainService : IDAO<Semaine>
+  public class SemainService : ISemaineService
   {
     IDbContext db;
     public SemainService(IDbContext db)
@@ -41,7 +42,15 @@ namespace GestionEmploi.Services.Impl
 
     public bool update(Semaine entity)
     {
-      throw new NotImplementedException();
+            //var sem = db.Semaines.Where<Semaine>(x => x.SemaineId == entity.SemaineId).First();
+            db.SaveChanges();
+            return true;
     }
-  }
+
+        public void UpdateId(int id)
+        {
+            db.SaveChanges();
+
+        }
+    }
 }

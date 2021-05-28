@@ -11,29 +11,65 @@ namespace GestionEmploi.Controllers
 {
     public class SemaineController : Controller
     {
-        IDAO<Semaine> serv;
+        ISemaineService serv;
 
-        public SemaineController(IDAO<Semaine> serv)
+        public SemaineController(ISemaineService serv)
         {
             this.serv = serv;
         }
 
         // GET: Semaine
-        public ActionResult Semaine()
+        public ActionResult Semaine(Semaine sem)
         {
-            return View();
+            if(sem != null)
+            {
+                return View(sem);
+            }
+            else
+                return View();
         }
 
         [HttpPost]
         public ActionResult SemaineAdd( Semaine s)
         {
-            var sem = new Semaine();
-            sem.libelle = s.libelle;
-            sem.DateDebut = sem.DateDebut;
-            sem.DateFin = sem.DateFin;
+            if(ModelState.IsValid)
+            {
+                var sem = new Semaine();
+                sem.SemaineId = s.SemaineId;
+                sem.libelle = s.libelle;
+                sem.DateDebut = s.DateDebut;
+                sem.DateFin = s.DateFin;
 
-            serv.create(sem);
-            return View();
+                if(s.SemaineId==0)
+                {
+                    serv.create(sem);
+                }
+                else
+                {
+                    var sema = serv.getById(s.SemaineId);
+                    sema.libelle = s.libelle;
+                    sema.DateDebut = s.DateDebut;
+                    sema.DateFin = s.DateFin;
+                    serv.update(sem);
+                }
+
+                
+            }
+            
+            return View("Semaine");
+        }
+
+        public ActionResult SemaineList()
+        {
+            var list = serv.getAll();
+            return View(list);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            serv.delete(id);
+            var list = serv.getAll();
+            return View("SemaineList", list);
         }
     }
 }

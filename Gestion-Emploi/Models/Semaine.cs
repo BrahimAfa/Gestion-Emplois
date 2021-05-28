@@ -11,10 +11,16 @@ namespace GestionEmploi.Models
   {
     [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
 
+
     public int SemaineId { get; set; }
-    public string libelle { get; set; }
-    public DateTime DateDebut { get; set; }
-    public DateTime DateFin { get; set; }
+        [Required]
+        public string libelle { get; set; }
+        [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMM/yyyy}")]
+        public DateTime DateDebut { get; set; }
+        [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMM/yyyy}")]
+        public DateTime DateFin { get; set; }
 
   }
 }

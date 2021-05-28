@@ -162,6 +162,10 @@
     <Compile Include="Migrations\202105200056429_init.designer.cs">
       <DependentUpon>202105200056429_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105281235048_InitialCreate.cs" />
+    <Compile Include="Migrations\202105281235048_InitialCreate.designer.cs">
+      <DependentUpon>202105281235048_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Annee.cs" />
     <Compile Include="Models\Cour.cs" />
@@ -179,6 +183,7 @@
     <Compile Include="Services\IDAO.cs" />
     <Compile Include="Services\IFiliereService.cs" />
     <Compile Include="Services\Impl\SemainService.cs" />
+    <Compile Include="Services\ISemaineService.cs" />
     <Compile Include="Utils\Config.cs" />
     <Compile Include="Utils\FileUtils.cs" />
   </ItemGroup>
@@ -308,6 +313,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Acceuil\Index.cshtml" />
     <Content Include="Views\Semaine\Semaine.cshtml" />
+    <Content Include="Views\Semaine\SemaineList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -321,6 +327,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105200056429_init.resx">
       <DependentUpon>202105200056429_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105281235048_InitialCreate.resx">
+      <DependentUpon>202105281235048_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
