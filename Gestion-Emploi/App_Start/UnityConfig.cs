@@ -19,6 +19,8 @@ namespace GestionEmploi.App_Start
 
             container.RegisterType<IFiliereService, FiliereService>();
             container.RegisterType<ISemaineService, SemainService>();
+            container.RegisterType<IDAO<Local>, LocalService>();
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
         }

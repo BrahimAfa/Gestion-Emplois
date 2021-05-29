@@ -154,6 +154,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AcceuilController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocalController.cs" />
     <Compile Include="Controllers\SemaineController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -165,6 +166,10 @@
     <Compile Include="Migrations\202105281235048_InitialCreate.cs" />
     <Compile Include="Migrations\202105281235048_InitialCreate.designer.cs">
       <DependentUpon>202105281235048_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105291641502_InitialCreate1.cs" />
+    <Compile Include="Migrations\202105291641502_InitialCreate1.designer.cs">
+      <DependentUpon>202105291641502_InitialCreate1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Annee.cs" />
@@ -182,6 +187,7 @@
     <Compile Include="Services\Impl\FiliereService.cs" />
     <Compile Include="Services\IDAO.cs" />
     <Compile Include="Services\IFiliereService.cs" />
+    <Compile Include="Services\Impl\LocalService.cs" />
     <Compile Include="Services\Impl\SemainService.cs" />
     <Compile Include="Services\ISemaineService.cs" />
     <Compile Include="Utils\Config.cs" />
@@ -314,6 +320,8 @@
     <Content Include="Views\Acceuil\Index.cshtml" />
     <Content Include="Views\Semaine\Semaine.cshtml" />
     <Content Include="Views\Semaine\SemaineList.cshtml" />
+    <Content Include="Views\Local\Local.cshtml" />
+    <Content Include="Views\Local\LocalList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -330,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105281235048_InitialCreate.resx">
       <DependentUpon>202105281235048_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105291641502_InitialCreate1.resx">
+      <DependentUpon>202105291641502_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

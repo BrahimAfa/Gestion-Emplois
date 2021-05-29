@@ -1,0 +1,34 @@
+﻿@model List<GestionEmploi.Models.Local>
+
+@{
+    ViewBag.Title = "LocalList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste des locaux</h2>
+
+<table class="table table-hover">
+    <tr class="btn-primary">
+        <th>ID Local</th>
+        <th>Libellé</th>
+        <th>Type </th>
+        <th>Capacité</th>
+        <th>Localisation</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.LocalId</td>
+    <td>@item.Libelle</td>
+    <td>@item.Type</td>
+    <td>@item.Capacity</td>
+    <td>@item.Localisation</td>
+    <td>
+        <a href="@Url.Action("Local",new { item.LocalId,item.Libelle,item.Type,item.Capacity,item.Localisation})" class="btn btn-success">Edit</a>
+        <a href="@Url.Action("Delete",new { id = item.LocalId})" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
+    }
+</table>
+

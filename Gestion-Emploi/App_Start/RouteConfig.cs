@@ -16,7 +16,7 @@ namespace GestionEmploi
       routes.MapRoute(
           name: "Default",
           url: "{controller}/{action}/{id}",
-          defaults: new { controller = "Semaine", action = "Semaine", id = UrlParameter.Optional }
+          defaults: new { controller = "Local", action = "Local", id = UrlParameter.Optional }
       );
     }
   }
