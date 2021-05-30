@@ -1,0 +1,26 @@
+﻿@model GestionEmploi.Models.Filiere
+@{
+    ViewBag.Title = "Local";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("AddFiliere", "Filiere", FormMethod.Post))
+{
+<div class="container">
+    <div class="form-group">
+        @if (Model != null && Model.FiliereId > 0)
+        {
+            @Html.HiddenFor(x => x.FiliereId)
+        }
+        <label>Libelle</label>
+        @Html.TextBoxFor(x => x.Libelle, new { @class = "form-control" })
+    </div>
+   
+        <input type="submit" value="Ajouter" class="btn btn-primary" />
+        <input type="reset" value="cancel" class="btn btn-danger" />
+
+    </div>
+
+    }

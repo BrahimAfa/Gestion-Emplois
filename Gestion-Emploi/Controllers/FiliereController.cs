@@ -20,11 +20,35 @@ namespace GestionEmploi.Controllers
         }
         
         // GET: Filiere
-        public ActionResult AddFiliere()
+        public ActionResult Filiere()
         {
              List<Filiere> liste = dao.getAll();
             ViewData["list"] = liste;
             return View();
         }
+    
+       
+        public ActionResult Delete(int id)
+        {
+            dao.delete(id);
+            return RedirectToAction("Filiere");
+        }
+        public ActionResult Create()
+        {
+            
+            return View("Create");
+        }
+       [HttpPost]
+      public ActionResult AddFiliere(Filiere filiere)
+        {
+            Filiere f = new Filiere
+            {
+                Libelle = filiere.Libelle
+            };
+              dao.create(f);
+            return RedirectToAction("Filiere");
+
+        }
+
     }
 }

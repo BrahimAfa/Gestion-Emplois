@@ -1,0 +1,76 @@
+﻿@model IEnumerable<GestionEmploi.Models.Filiere>
+
+@Styles.Render("~/Content/Filiere.css")
+
+<div class="container">
+    @Html.ActionLink("+ Add", "Create",null,null, new { @class = "btn btn-primary" })
+  
+    <br />
+    <br />
+    <div class="table-responsive">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Libelle</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (var filier in ViewData["list"] as IEnumerable<GestionEmploi.Models.Filiere>)
+                {
+                    <tr>
+
+                        <td> @filier.FiliereId</td>
+                        <td>@filier.Libelle</td>
+
+                        <td>
+                       <a href="@Url.Action("Delete",new { id = filier.FiliereId})" class="btn btn-danger">Delete</a>
+                           
+                            <button data-id="@filier" class="btn btn-info passingID" data-bs-toggle="modal" data-bs-target="#exampleModal">Info</button>
+
+                            <button class="btn btn-success">Updtae</button>
+                        </td>
+
+                    </tr>
+
+
+
+
+                }
+
+
+            </tbody>
+        </table>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="tambahkaryawan.php">
+                            <input type="text" class="form-control" name="idkl" id="idkl" value="">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(".passingID").click(function () {
+        var ids = $(this).attr('data-id');
+        $("#idkl").val(ids.FiliereId);
+        $('#exampleModal').modal('show');
+    });
+</script>
