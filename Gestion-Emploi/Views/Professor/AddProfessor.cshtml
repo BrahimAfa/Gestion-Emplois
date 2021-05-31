@@ -1,0 +1,26 @@
+﻿
+@model GestionEmploi.Models.Professor
+@{
+    ViewBag.Title = "AddProfessor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddProfessorToBd", "Professor", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            @*@if (Model != null && Model.SemaineId > 0)
+        {
+            @Html.HiddenFor(x => x.SemaineId)
+        }*@
+            <label>Nom</label>
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+            <label>Prenom</label>
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+            <label>Email</label>
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        </div>
+        <input type="submit" value="Ajouter" class="btn btn-primary" />
+        <input type="reset" value="cancel" class="btn btn-danger" />
+    </div>
+}

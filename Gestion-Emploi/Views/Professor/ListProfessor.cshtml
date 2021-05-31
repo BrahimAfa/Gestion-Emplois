@@ -1,0 +1,76 @@
+﻿@model IEnumerable<GestionEmploi.Models.Professor>
+
+@{
+    ViewBag.Title = "ListProfessor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/Filiere.css")
+
+<div class="container">
+    @Html.ActionLink("+ Add", "AddProfessor", null, null, new { @class = "btn btn-primary" })
+
+    <br />
+    <br />
+    <div class="table-responsive">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (var prof in ViewData["list"] as IEnumerable<GestionEmploi.Models.Professor>)
+                {
+                    <tr>
+
+                        <td>@prof.LastName</td>
+                        <td>@prof.FirstName</td>
+                        <td>@prof.Email</td>
+
+                        <td>
+                            <a href="@Url.Action("Delete",new { id = prof.ProfessorId})" class="btn btn-danger">Delete</a>
+
+                            <button data-id="@prof" class="btn btn-info passingID" data-bs-toggle="modal" data-bs-target="#exampleModal">Info</button>
+
+                            <button href="@Url.Action("AddProfessor",new { prof.ProfessorId,prof.LastName,prof.FirstName,prof.Email})" class="btn btn-success">Updtae</button>
+                        </td>
+
+                    </tr>
+
+
+
+
+                }
+
+
+            </tbody>
+        </table>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="tambahkaryawan.php">
+                            <input type="text" class="form-control" name="idkl" id="idkl" value="">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
