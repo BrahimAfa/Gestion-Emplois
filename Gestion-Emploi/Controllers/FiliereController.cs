@@ -33,6 +33,12 @@ namespace GestionEmploi.Controllers
             dao.delete(id);
             return RedirectToAction("Filiere");
         }
+        public ActionResult Edit(int id)
+        {
+            Filiere filiere = dao.getById(id);
+            return View(filiere);
+
+        }
         public ActionResult Create()
         {
             
@@ -49,6 +55,17 @@ namespace GestionEmploi.Controllers
             return RedirectToAction("Filiere");
 
         }
+        [HttpPost]
+        public ActionResult Update(Filiere filiere)
+        {
+           
+            Filiere filiere1 = dao.getById(filiere.FiliereId);
+            filiere1.Libelle = filiere.Libelle;
+            dao.update(filiere1);
+            return RedirectToAction("Filiere");
 
+        }
+
+        
     }
 }

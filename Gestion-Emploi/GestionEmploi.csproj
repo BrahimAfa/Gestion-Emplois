@@ -231,6 +231,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\boxicons.min.css" />
     <Content Include="Content\Filiere.css" />
+    <Content Include="Content\form.css" />
     <Content Include="Content\sidebar.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\boxicons.svg" />
@@ -303,6 +304,7 @@
     <Content Include="Views\Filiereshh\Edit.cshtml" />
     <Content Include="Views\Filiereshh\Index.cshtml" />
     <Content Include="Views\Filiere\Create.cshtml" />
+    <Content Include="Views\Filiere\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

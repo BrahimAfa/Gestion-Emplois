@@ -42,12 +42,15 @@ namespace GestionEmploi.Services
 
     public Filiere getById(int id)
     {
-      throw new NotImplementedException();
-    }
+            Filiere f = db.Filieres.SingleOrDefault(x => x.FiliereId == id);
+            return f;
 
-    public bool update(Filiere entity)
+        }
+
+        public bool update(Filiere entity)
     {
-      throw new NotImplementedException();
-    }
+            db.SaveChanges();
+            return true;
+        }
   }
 }

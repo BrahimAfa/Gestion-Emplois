@@ -28,11 +28,9 @@
                         <td>@filier.Libelle</td>
 
                         <td>
-                       <a href="@Url.Action("Delete",new { id = filier.FiliereId})" class="btn btn-danger">Delete</a>
-                           
-                            <button data-id="@filier" class="btn btn-info passingID" data-bs-toggle="modal" data-bs-target="#exampleModal">Info</button>
-
-                            <button class="btn btn-success">Updtae</button>
+                            <a href="@Url.Action("Delete",new { id = filier.FiliereId})" class="btn btn-danger">Delete</a>
+                            <a href="@Url.Action("Edit",new { id = filier.FiliereId})" class="btn btn-success">Edit</a>
+                        
                         </td>
 
                     </tr>

@@ -7,7 +7,7 @@
 @Styles.Render("~/Content/form.css")
 
 
-@using (Html.BeginForm("AddFiliere", "Filiere", FormMethod.Post))
+@using (Html.BeginForm("Update", "Filiere", FormMethod.Post))
 {
     <div class="container">
         <div class="form-group">
@@ -20,15 +20,15 @@
                     <div class="col-md-6">
                         <div class="card px-5 py-5">
                             <span class="circle"><i class="fa fa-check"></i></span>
-                            <h5 class="mt-3">Ajouter une Filiere </h5>
+                            <h5 class="mt-3">Edit  <b>Filiere</b> </h5>
                             <div class="form-input">
                                 <i class="fa fa-user"></i>
                                 @Html.TextBoxFor(x => x.Libelle, new { placeholder = "Libelle", @class = "form-control" })
 
                             </div>
-                            <div> <input type="submit" value="Ajouter" class="btn btn-primary mt-4 signup" /> </div>
+                            <div> <input type="submit" value="update" class="btn btn-primary mt-4 signup" /> </div>
                         </div>
-                    
+
                     </div>
 
                 </div>
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-   
+
 
 
 
