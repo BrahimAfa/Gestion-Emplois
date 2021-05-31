@@ -4,7 +4,7 @@
     ViewBag.Title = "ListProfessor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Styles.Render("~/Content/Filiere.css")
+
 
 <div class="container">
     @Html.ActionLink("+ Add", "AddProfessor", null, null, new { @class = "btn btn-primary" })
@@ -36,9 +36,8 @@
                         <td>
                             <a href="@Url.Action("Delete",new { id = prof.ProfessorId})" class="btn btn-danger">Delete</a>
 
-                            <button data-id="@prof" class="btn btn-info passingID" data-bs-toggle="modal" data-bs-target="#exampleModal">Info</button>
 
-                            <button href="@Url.Action("AddProfessor",new { prof.ProfessorId,prof.LastName,prof.FirstName,prof.Email})" class="btn btn-success">Updtae</button>
+                            <a href="@Url.Action("EditeProfessor",new { id = prof.ProfessorId})" class="btn btn-success">Updtae</a>
                         </td>
 
                     </tr>

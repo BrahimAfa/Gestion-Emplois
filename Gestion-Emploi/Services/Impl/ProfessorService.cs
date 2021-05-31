@@ -48,7 +48,7 @@ namespace GestionEmploi.Services.Impl
 
         public Professor getById(int id)
         {
-            var prof = db.Professors.Where<Professor>(x => x.ProfessorId == id).First();
+            Professor prof = db.Professors.SingleOrDefault(x => x.ProfessorId == id);
             return prof;
         }
 
@@ -60,6 +60,7 @@ namespace GestionEmploi.Services.Impl
 
         public bool update(Professor entity)
         {
+            
             db.SaveChanges();
             return true;
         }

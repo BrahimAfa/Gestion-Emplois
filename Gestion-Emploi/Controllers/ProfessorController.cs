@@ -35,21 +35,10 @@ namespace GestionEmploi.Controllers
         [HttpPost]
         public ActionResult AddProfessorToBd(Professor professor)
         {
-            //if (professor.ProfessorId == null)
-            //{
-                dao.create(professor);
-            //}
-            //else
-            //{
-            //    var prof = dao.getById(professor.ProfessorId);
-            //    prof.LastName = professor.LastName;
-            //    prof.FirstName = professor.FirstName;
-            //    prof.Email = professor.Email;
-            //    dao.update(prof);
-            //}
-            
+            dao.create(professor);         
             return RedirectToAction("ListProfessor");
         }
+
 
         public ActionResult ListProfessor()
         {
@@ -60,6 +49,26 @@ namespace GestionEmploi.Controllers
         public ActionResult Delete(int id)
         {
             dao.delete(id);
+            return RedirectToAction("ListProfessor");
+        }
+
+        public ActionResult EditeProfessor(int id)
+        {
+            Professor professor = dao.getById(id);
+            return View(professor);
+        }
+
+        [HttpPost]
+        public ActionResult EditProfessorDb(Professor professor)
+        {
+            
+                Professor profUpdate = dao.getById(professor.ProfessorId);
+                profUpdate.Email = professor.Email;
+                profUpdate.LastName = professor.LastName;
+                profUpdate.FirstName = professor.FirstName;
+                dao.update(profUpdate);
+               
+          
             return RedirectToAction("ListProfessor");
         }
     }
