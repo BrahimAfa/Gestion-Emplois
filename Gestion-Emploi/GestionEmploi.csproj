@@ -152,9 +152,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AcceuilController.cs" />
+    <Compile Include="Controllers\CourController.cs" />
     <Compile Include="Controllers\FiliereController.cs" />
     <Compile Include="Controllers\FiliereshhController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NiveauController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,9 +177,11 @@
     <Compile Include="Models\Seance.cs" />
     <Compile Include="Models\Semaine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Impl\CourService.cs" />
     <Compile Include="Services\Impl\FiliereService.cs" />
     <Compile Include="Services\IDAO.cs" />
     <Compile Include="Services\IFiliereService.cs" />
+    <Compile Include="Services\Impl\NiveauService.cs" />
     <Compile Include="Services\Impl\SemainService.cs" />
     <Compile Include="Utils\Config.cs" />
     <Compile Include="Utils\FileUtils.cs" />
@@ -305,6 +309,10 @@
     <Content Include="Views\Filiereshh\Index.cshtml" />
     <Content Include="Views\Filiere\Create.cshtml" />
     <Content Include="Views\Filiere\Edit.cshtml" />
+    <Content Include="Views\Niveau\Niveau.cshtml" />
+    <Content Include="Views\Niveau\Create.cshtml" />
+    <Content Include="Views\Niveau\Edit.cshtml" />
+    <Content Include="Views\Cour\Cour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
