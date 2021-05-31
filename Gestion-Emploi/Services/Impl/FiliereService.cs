@@ -15,8 +15,7 @@ namespace GestionEmploi.Services
     }
     public bool create(Filiere entity)
     {
-
-            db.Filieres.Add(entity);
+                db.Filieres.Add(entity);
             return db.SaveChanges() > 0;
         }
 

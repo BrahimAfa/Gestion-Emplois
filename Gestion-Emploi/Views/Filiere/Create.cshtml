@@ -7,8 +7,10 @@
 @Styles.Render("~/Content/form.css")
 
 
+
 @using (Html.BeginForm("AddFiliere", "Filiere", FormMethod.Post))
 {
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="container">
         <div class="form-group">
             @if (Model != null && Model.FiliereId > 0)
@@ -24,11 +26,12 @@
                             <div class="form-input">
                                 <i class="fa fa-user"></i>
                                 @Html.TextBoxFor(x => x.Libelle, new { placeholder = "Libelle", @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Libelle, "", new { @class = "text-danger" })
 
                             </div>
                             <div> <input type="submit" value="Ajouter" class="btn btn-primary mt-4 signup" /> </div>
                         </div>
-                    
+
                     </div>
 
                 </div>
@@ -36,7 +39,7 @@
         </div>
     </div>
 
-   
+
 
 
 

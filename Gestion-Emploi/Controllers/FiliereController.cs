@@ -41,18 +41,24 @@ namespace GestionEmploi.Controllers
         }
         public ActionResult Create()
         {
+
+            
             
             return View("Create");
         }
        [HttpPost]
       public ActionResult AddFiliere(Filiere filiere)
         {
-            Filiere f = new Filiere
+            if (ModelState.IsValid)
             {
-                Libelle = filiere.Libelle
-            };
-              dao.create(f);
-            return RedirectToAction("Filiere");
+                Filiere f = new Filiere
+                {
+                    Libelle = filiere.Libelle
+                };
+                dao.create(f);
+            }
+           
+            return RedirectToAction("Create");
 
         }
         [HttpPost]
