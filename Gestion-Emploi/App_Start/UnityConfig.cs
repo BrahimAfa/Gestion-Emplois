@@ -19,6 +19,7 @@ namespace GestionEmploi.App_Start
 
             container.RegisterType<IFiliereService, FiliereService>();
             container.RegisterType<IProfessorService, ProfessorService>();
+            container.RegisterType<ICourService, CourService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
         }
