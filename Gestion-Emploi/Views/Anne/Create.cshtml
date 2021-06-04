@@ -1,0 +1,149 @@
+﻿@model GestionEmploi.Models.Annee
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+@Styles.Render("~/Content/form.css")
+
+
+@using (Html.BeginForm("AJouter_Annee", "Anne", FormMethod.Post))
+
+{
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="container">
+    <div class="form-group">
+        @if (Model != null && Model.AnneeId > 0)
+            {
+        @Html.HiddenFor(x => x.AnneeId)
+            }
+        <div class="container mt-5 mb-5">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-md-6">
+                    <div class="card px-5 py-5">
+                        <span class="circle"><i class="fa fa-check"></i></span>
+                        <h5 class="mt-3">Ajouter une Nouvelle Annee </h5>
+                        <div class="form-input">
+                            <i class="fa fa-user"></i>
+                            @Html.TextBoxFor(x => x.Libelle, new { placeholder = "Libelle", @class = "form-control" })
+
+                        </div>
+
+                        <div class="form-group d-flex mb-2">
+
+                            @Html.EditorFor(x => x.DateDebut, new { htmlAttributes = new { placeholder = "Date de début", @class = "form-control datepicker me-2 " } } )
+                            @Html.ValidationMessageFor(x => x.DateDebut, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group d-flex">
+
+                            @Html.EditorFor(x => x.DateFin, new
+                       {
+                           htmlAttributes = new
+                           {
+                               placeholder = "Date de Fin",
+                               @class = "form-control datepicker me-2"
+                               /*  @readonly ="true",value = Model.DateFin.ToString("YYYY-MM-DD")*/
+                           }
+                       })
+                            @Html.ValidationMessageFor(x => x.DateFin, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div> <input type="submit" value="Ajouter" class=" btn-success mt-4 signup" /> </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*@section Scripts{
+        @Scripts.Render("~/bundles/jqueryui")
+        @Styles.Render("~/Content/cssjqryUi")
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('input[type=datetime]').datepicker({
+                    dateFormat: "dd/M/yy",
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "-60:+0"
+                });
+            });
+        </script>
+    }*@
+
+
+
+@section scripts{
+
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script>
+
+            $(function () {
+                $(".datepicker").datepicker({
+
+                    dateFormat: "yy/mm/dd",
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "-10:+10",
+                    minDate: new Date(2005, 0, 1),
+                    maxDate: new Date(2022, 0, 1),
+                    showOn: "both",
+                    buttonText: "<i class='fa fa-calendar'></i>",
+
+
+
+
+
+
+                });
+
+
+            });
+
+
+
+    </script>
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+

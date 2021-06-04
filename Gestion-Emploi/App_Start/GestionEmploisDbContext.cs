@@ -27,8 +27,9 @@ namespace GestionEmploi.App_Start {
     public virtual DbSet<Professor> Professors { get ; set ; }
     public virtual DbSet<Seance> Seances { get ; set ; }
     public virtual DbSet<Semaine> Semaines { get ; set ; }
+    public virtual DbSet<Group> Groupes { get; set; }
 
-    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
       modelBuilder.Entity<Emplois>()
         .HasRequired<Niveau>(p => p.Niveau)
