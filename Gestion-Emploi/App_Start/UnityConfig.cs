@@ -16,7 +16,9 @@ namespace GestionEmploi.App_Start
 
             var container = new UnityContainer();
             container.RegisterSingleton<IDbContext, GestionEmploisDbContext>();
-
+            
+           
+            container.RegisterType<IDAO<Niveau>, NiveauService>();
             container.RegisterType<IFiliereService, FiliereService>();
             container.RegisterType<IProfessorService, ProfessorService>();
             container.RegisterType<ICourService, CourService>();

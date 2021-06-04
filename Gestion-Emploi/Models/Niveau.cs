@@ -16,7 +16,7 @@ namespace GestionEmploi.Models
 
     [ForeignKey("Filiere")]
     public int FiliereId { get; set; }
-    public Filiere Filiere { get; set; }
+    public virtual Filiere Filiere { get; set; }
 
     public virtual List<Emplois> Emplois{ get; set; }
   }

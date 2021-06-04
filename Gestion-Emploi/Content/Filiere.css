@@ -1,0 +1,41 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background-color: #BBDEFB;
+    padding: 10px 10px 0 10px
+}
+
+.container .table thead tr th {
+    background-color: #673AB7;
+    padding: 30px 10px;
+    border: none;
+    color: white
+}
+
+td:nth-child(2n+1) {
+    background-color: #EDE7F6
+}
+
+td:nth-child(2n) {
+    background-color: white
+}
+
+.container .table tbody tr td {
+    padding: 30px 10px;
+    font-weight: 600
+}
+
+.btn.btn-primary {
+    background-color: #673AB7;
+    padding: 10px;
+    width: 80px;
+    border: 1px solid #673AB7
+}
+
+    .btn.btn-primary:hover {
+        background-color: #7f5dbb
+    }

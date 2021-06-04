@@ -12,8 +12,8 @@ namespace GestionEmploi.Controllers
   {
     // IDAO<Filiere> dao;
     // or 
-    IFiliereService dao;
-    public HomeController(IFiliereService dao)
+    IDAO<Filiere> dao;
+    public HomeController(IDAO<Filiere> dao)
     {
       this.dao = dao;
     }
