@@ -1,4 +1,5 @@
 ﻿@using GestionEmploi.Models;
+@model CrossRefEmploisDetail
 @{
   ViewBag.Title = "Home Page";
   Layout = "~/Views/Shared/_Layout.cshtml";
@@ -116,9 +117,31 @@
               </td>
               @{ foreach (var item in kvp.Value)
                 {
-                  <td class="position-relative" data-info="@(kvp.Key + "_" + @item.name)" id="@(kvp.Key + "_" + @item.id)">
-                    <div data-id="@(kvp.Key + "_" + @item.id)" data-info="@(kvp.Key + "_" + @item.name)" class="modalBtn  btn btn-outline-primary rounded-circle btn-lg">+</div>
-                  </td>
+                 DetailEmplois d = Model.detailEmplois.Where(det => det.SeanceId == item.id).SingleOrDefault();
+
+              <td class="position-relative" data-id="@(d?.DetailEmploisId)" data-info="@(kvp.Key + "_" + @item.name)" id="@(kvp.Key + "_" + @item.id)">
+                @if (d is null)
+                {
+                  <div data-id="@(kvp.Key + "_" + @item.id)" data-info="@(kvp.Key + "_" + @item.name)" class="modalBtn  btn btn-outline-primary rounded-circle btn-lg">+</div>
+
+                }
+                else
+                {
+                  <div class="d-flex flex-column justify-content-center align-items-center">
+                  <span class="border-2 border-bottom pb-1">@d.Cour.Libelle</span>
+                  <span class="border-2 border-bottom fw-bold pb-1 text-black-50">@d.Cour.Responsable.FirstName</span>
+                  <span class="time">@d.Local.Libelle</span>
+                </div>
+                  <div data-courId ="@d.CourId" data-cours="@d.Cour.Libelle" data-localId="@d.LocalId"   data-local="@d.Local.Libelle" class="d-flex position-absolute" style="top: 0; right: 0;">
+                      <span class="circle-2 deleteSeance">
+                        <i class='bx bx-trash'></i>
+                      </span>
+                      <span data-info="somethingTeGetThisData" class="circle-2 updateSeance">
+                        <i class='bx bxs-message-square-edit'></i>
+                      </span>
+                    </div>
+                    }
+                </td>
                 } }
             </tr>
 
@@ -183,12 +206,21 @@
   </div>
 </div>
 <script>
-
-
-
+  const EmploiID =@Model.emplois.EmploisId;
+  console.log("EmploiID ++>", EmploiID);
   let detailEmplois = [{}];
   let currentSeanceId;
+  let updatedSeanceId;
   let currentSeance = {
+    cours: null,
+    CourId: null,
+    seance: null,
+    SeanceId: null,
+    local: null,
+    LocalId: null,
+    prof: null
+  }
+  let olddSeance = {
     cours: null,
     CourId: null,
     seance: null,
@@ -207,7 +239,7 @@
   }
   $('#btnSend').on('click', function () {
     console.log(data)
-   //return;
+    return;
     $.ajax({
       type: "POST",
       url: "/Home/jsonData",
@@ -265,22 +297,50 @@
     if (itemIndex >= 0) {
       data.detailEmplois.splice(itemIndex, 1);
     }
+    $.ajax({
+      type: "POST",
+      url: "/Home/deleteSeance",
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify({ id: node.data().id }),
+      dataType: "json",
+      success: function (response) {
+        if (response != null) {
+          console.log(response)
+        } else {
+          alert("Something went wrong");
+        }
+      },
+      failure: function (response) {
+        alert(response.responseText);
+      },
+      error: function (response) {
+        alert(response.responseText);
+      }
+    });
   });
+
   $(document).on('click', '.updateSeance', function () {
     let node = $(this.parentNode.parentNode);       // i lefte it here
     let updateData = $(this.parentNode).data();
-    console.log({updateData})
+    console.log({ updateData })
+
     $('#dropdownLocals').text(updateData.local)
     $('#dropdownCours').text(updateData.cours)
-    currentSeanceId = node.attr('id');
     $('#exampleModal').modal("show");
+    currentSeance.DetailEmploisId = node.data().id; // in case if its updating an elment from database i get the Id
+
+    updatedSeanceId = node.attr('id');
+    olddSeance.CourId = updateData.courid;
+    olddSeance.LocalId = updateData.localid;
+    olddSeance.cours = updateData.cours;
+    olddSeance.local = updateData.local;
     currentSeanceId = node.attr('id')
     currentSeance.CourId = updateData.courid;
     currentSeance.LocalId = updateData.localid;
     currentSeance.cours = updateData.cours;
     currentSeance.local = updateData.local;
-    console.log(currentSeance);
-    
+    console.log({ olddSeance});
+
     let seanceInfo = node.data().info.split('_');
     $('#exampleModalLabel').text(`Ajouter Seance : ${seanceInfo[0]} à ${seanceInfo[1]}`);
 
@@ -528,7 +588,39 @@
   // Modal hidden event fired
   $('#exampleModal').on('hidden.bs.modal', function () {
     console.log("Modal closed " + currentSeanceId);
-    console.log("Modal closed ", currentSeance);
+    console.log({ currentSeance });
+    console.log({ olddSeance});
+
+    if (updatedSeanceId && currentSeance.DetailEmploisId) {
+      // if there's no change (the same values) return;
+      if (currentSeance.CourId == olddSeance.CourId && currentSeance.LocalId == olddSeance.LocalId) return;
+      currentSeance.EmploisId = EmploiID;
+      currentSeance.SeanceId = updatedSeanceId.split('_')[1];
+
+      $.ajax({
+        type: "POST",
+        url: "/Home/updateDetailEmplois",
+        data: JSON.stringify(currentSeance),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (response) {
+          if (response != null) {
+            alert("Name : " + response.name);
+          } else {
+            alert("Something went wrong");
+          }
+        },
+        failure: function (response) {
+          alert(response.responseText);
+        },
+        error: function (response) {
+          alert(response.responseText);
+        }
+      });
+      updatedSeanceId = null;
+
+      return;
+    }
     if (!currentSeance.CourId || !currentSeance.LocalId) return;
     $(`#${currentSeanceId}`).html(SeanceDataTemplate())
     $('#dropdownLocals').text("Chose Local")

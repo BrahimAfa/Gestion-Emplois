@@ -18,6 +18,11 @@ namespace GestionEmploi.Services
       throw new NotImplementedException();
     }
 
+    public bool create(List<Filiere> entity)
+    {
+      throw new NotImplementedException();
+    }
+
     public bool delete(int id)
     {
       throw new NotImplementedException();

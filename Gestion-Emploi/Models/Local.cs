@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 
 namespace GestionEmploi.Models
 {
@@ -15,8 +16,8 @@ namespace GestionEmploi.Models
     public string Type { get; set; }
     public string Capacity { get; set; }
     public string Localisation { get; set; }
-
-    public virtual List<DetailEmplois> DetailEmplois { get; set; }
+    [ScriptIgnore]
+    public List<DetailEmplois> DetailEmplois { get; set; }
 
   }
 }

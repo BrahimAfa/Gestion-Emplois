@@ -14,9 +14,9 @@ namespace GestionEmploi.App_Start {
     static Config config = FileUtils.LoadJson();
     public GestionEmploisDbContext():base(config.ConnectionString)
     {
-    
-    }
 
+    }
+    
     public virtual DbSet<Annee> Annees { get ; set ; }
     public virtual DbSet<Cour> Cours { get ; set ; }
     public virtual DbSet<DetailEmplois> DetailEmplois { get ; set ; }

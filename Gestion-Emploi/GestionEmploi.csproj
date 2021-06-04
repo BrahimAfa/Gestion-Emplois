@@ -153,6 +153,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AcceuilController.cs" />
+    <Compile Include="Controllers\EmploisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -164,6 +165,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Annee.cs" />
     <Compile Include="Models\Cour.cs" />
+    <Compile Include="Models\CrossRefEmploisDetail.cs" />
     <Compile Include="Models\DetailEmplois.cs" />
     <Compile Include="Models\Emplois.cs" />
     <Compile Include="Models\Filiere.cs" />
@@ -173,10 +175,14 @@
     <Compile Include="Models\Professor.cs" />
     <Compile Include="Models\Seance.cs" />
     <Compile Include="Models\Semaine.cs" />
+    <Compile Include="Models\viewSeances.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Impl\DetailEmploisService.cs" />
+    <Compile Include="Services\Impl\EmploisService.cs" />
     <Compile Include="Services\Impl\FiliereService.cs" />
     <Compile Include="Services\IDAO.cs" />
     <Compile Include="Services\IFiliereService.cs" />
+    <Compile Include="Services\Impl\SeanceService.cs" />
     <Compile Include="Services\Impl\SemainService.cs" />
     <Compile Include="Utils\Config.cs" />
     <Compile Include="Utils\FileUtils.cs" />
@@ -229,6 +235,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\boxicons.min.css" />
+    <Content Include="Content\emplois.css" />
     <Content Include="Content\sidebar.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\boxicons.svg" />
@@ -294,6 +301,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Acceuil\Index.cshtml" />
+    <Content Include="Views\Emplois\Index.cshtml" />
+    <Content Include="Views\Home\Emplois.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

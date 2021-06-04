@@ -7,21 +7,20 @@ using System.Web;
 
 namespace GestionEmploi.Services.Impl
 {
-  public class SemainService : IDAO<Semaine>
+  public class SeanceService : IDAO<Seance>
   {
     IDbContext db;
-    public SemainService(IDbContext db)
+    public SeanceService(IDbContext db)
     {
       this.db = db;
     }
 
-    public bool create(Semaine entity)
+    public bool create(Seance entity)
     {
-      db.Semaines.Add(entity);
-      return db.SaveChanges() > 0;
+      throw new NotImplementedException();
     }
 
-    public bool create(List<Semaine> entity)
+    public bool create(List<Seance> entity)
     {
       throw new NotImplementedException();
     }
@@ -31,17 +30,17 @@ namespace GestionEmploi.Services.Impl
       throw new NotImplementedException();
     }
 
-    public List<Semaine> getAll()
+    public List<Seance> getAll()
+    {
+      return db.Seances.ToList();
+    }
+
+    public Seance getById(int id)
     {
       throw new NotImplementedException();
     }
 
-    public Semaine getById(int id)
-    {
-      throw new NotImplementedException();
-    }
-
-    public bool update(Semaine entity)
+    public bool update(Seance entity)
     {
       throw new NotImplementedException();
     }

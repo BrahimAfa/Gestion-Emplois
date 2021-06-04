@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 
 namespace GestionEmploi.Models
 {
@@ -16,13 +17,13 @@ namespace GestionEmploi.Models
     public int ResponsableId { get; set; }
 
     [ForeignKey("ResponsableId")]
-    public Professor Responsable { get; set; }
+    public virtual Professor Responsable { get; set; }
 
     [ForeignKey("Niveau")]
     public int NiveauId { get; set; }
-    public Niveau Niveau { get; set; }
-
-    public virtual List<DetailEmplois> DetailEmplois { get; set; }
+    public virtual Niveau Niveau { get; set; }
+    [ScriptIgnore]
+    public List<DetailEmplois> DetailEmplois { get; set; }
 
 
   }

@@ -24,6 +24,11 @@ namespace GestionEmploi.Models
     public int SemaineId { get; set; }
     public Semaine Semaine { get; set; }
 
-    public virtual List<DetailEmplois> DetailEmplois { get; set; }
+    public List<DetailEmplois> DetailEmplois { get; set; }
+
+    public override string ToString()
+    {
+      return $"{NiveauId} ${SemaineId}";
+    }
   }
 }
