@@ -31,7 +31,7 @@
     <div class="dropdown w-50">
       <button class="btn w-100 btn-secondary dropdown-toggle" type="button" id="dropdownSemain" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
-        Chose Semain
+       @Model.emplois.Semaine.libelle
       </button>
       <div id="menu" class="dropdown-menu w-100" aria-labelledby="dropdownSemain">
         <form class="px-4 py-2">
@@ -47,7 +47,7 @@
     <div class="dropdown w-50">
       <button class="btn w-100 btn-secondary dropdown-toggle" type="button" id="dropdownAnnee" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
-        Chose Annee
+        @Model.emplois.Annee.Libelle
       </button>
       <div id="menu" class="dropdown-menu w-100" aria-labelledby="dropdownAnnee">
         <form class="px-4 py-2">
@@ -63,7 +63,7 @@
     <div class="dropdown w-50">
       <button class="btn w-100 btn-secondary dropdown-toggle" type="button" id="dropdownFiliere" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
-        Chose Filiere
+        @Model.emplois.Niveau.Filiere.Libelle
       </button>
       <div id="menu" class="dropdown-menu w-100" aria-labelledby="dropdownFiliere">
         <form class="px-4 py-2">
@@ -79,7 +79,7 @@
     <div class="dropdown w-50">
       <button class="btn w-100 btn-secondary dropdown-toggle" type="button" id="dropdownNiv" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
-        Chose Niveau
+        @Model.emplois.Niveau.libelle
       </button>
       <div id="menu" class="dropdown-menu w-100" aria-labelledby="dropdownNiv">
         <form class="px-4 py-2">
@@ -606,6 +606,9 @@
         success: function (response) {
           if (response != null) {
             alert("Name : " + response.name);
+            $(`#${currentSeanceId}`).html(SeanceDataTemplate())
+            $('#dropdownLocals').text("Chose Local")
+            $('#dropdownCours').text("Chose Cours")
           } else {
             alert("Something went wrong");
           }

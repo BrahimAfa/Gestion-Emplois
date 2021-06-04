@@ -14,7 +14,7 @@ namespace GestionEmploi.Models
 
     [ForeignKey("Niveau")]
     public int NiveauId { get; set; }
-    public Niveau Niveau{ get; set; }
+    public virtual Niveau Niveau{ get; set; }
 
     [ForeignKey("Annee")]
     public int AnneeId { get; set; }
