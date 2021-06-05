@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 
 namespace GestionEmploi.Models
 {
@@ -21,8 +22,8 @@ namespace GestionEmploi.Models
     [ForeignKey("Niveau")]
     public int NiveauId { get; set; }
     public virtual Niveau Niveau { get; set; }
-
-    public virtual List<DetailEmplois> DetailEmplois { get; set; }
+    [ScriptIgnore]
+    public List<DetailEmplois> DetailEmplois { get; set; }
 
 
   }

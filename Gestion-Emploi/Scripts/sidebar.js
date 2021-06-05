@@ -9,8 +9,8 @@
     // Validate that all variables exist
     if (toggle && nav && bodypd && headerpd) {
       toggle.addEventListener('click', () => {
-        // show navbar
-        nav.classList.toggle('show')
+        // showsidebar navbar
+        nav.classList.toggle('showsidebar')
         // change icon
         toggle.classList.toggle('bx-x')
         // add padding to body

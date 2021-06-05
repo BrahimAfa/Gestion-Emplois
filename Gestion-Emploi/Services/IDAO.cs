@@ -13,6 +13,7 @@ namespace GestionEmploi.Services
     bool delete(int id);
     bool update(T entity);
     bool create(T entity);
+    bool create(List<T> entity);
 
   }
 }

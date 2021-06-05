@@ -19,6 +19,11 @@ namespace GestionEmploi.Services
             return db.SaveChanges() > 0;
         }
 
+    public bool create(List<Filiere> entity)
+    {
+      throw new NotImplementedException();
+    }
+
     public bool delete(int id)
     {
 

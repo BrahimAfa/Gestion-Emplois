@@ -22,6 +22,11 @@ namespace GestionEmploi.Services.Impl
       return db.SaveChanges() > 0;
     }
 
+    public bool create(List<Semaine> entity)
+    {
+      throw new NotImplementedException();
+    }
+
     public bool delete(int id)
     {
             var sem = db.Semaines.Where<Semaine>(x => x.SemaineId == id).First();
