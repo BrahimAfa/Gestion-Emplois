@@ -7,7 +7,7 @@
 
 <h2>Liste des Professeur</h2>
 <div class="container">
-    @Html.ActionLink("+ Add", "AddProfessor", null, null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("+ Add", "AddCour", null, null, new { @class = "btn btn-primary" })
 
     <br />
     <br />
@@ -34,7 +34,7 @@
                         <td>@cour.Niveau.libelle</td>
 
                         <td>
-                            <a href="@Url.Action("DeleteCour",new { id = cour.CourId})" class="btn btn-danger">Delete</a>
+                            <a href="@Url.Action("Delete",new { id = cour.CourId})" class="btn btn-danger">Delete</a>
 
 
                             <a href="@Url.Action("EditeCour",new { id = cour.CourId})" class="btn btn-success">Updtae</a>

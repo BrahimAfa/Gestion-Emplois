@@ -16,11 +16,11 @@ namespace GestionEmploi.Models
     public int ResponsableId { get; set; }
 
     [ForeignKey("ResponsableId")]
-    public Professor Responsable { get; set; }
+    public virtual Professor Responsable { get; set; }
 
     [ForeignKey("Niveau")]
     public int NiveauId { get; set; }
-    public Niveau Niveau { get; set; }
+    public virtual Niveau Niveau { get; set; }
 
     public virtual List<DetailEmplois> DetailEmplois { get; set; }
 

@@ -14,7 +14,7 @@ namespace GestionEmploi.Models
     public string LastName { get; set; }
     public string Email { get; set; }
 
-    public virtual List<Cour> Cours { get; set; }
+    public List<Cour> Cours { get; set; }
 
 
   }

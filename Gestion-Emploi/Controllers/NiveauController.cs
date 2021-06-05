@@ -25,7 +25,7 @@ namespace GestionEmploi.Controllers
         {
             List<Niveau> liste = dao.getAll();
             ViewData["list"] = liste;
-            return View();
+            return View(liste);
           
         }
         public ActionResult Create()
@@ -50,7 +50,9 @@ namespace GestionEmploi.Controllers
                FiliereId = niveau.FiliereId
             };
             dao.create(n);
-            return RedirectToAction("Niveau");
+      List<Niveau> liste = dao.getAll();
+      ViewData["list"] = liste;
+      return View("Niveau",liste);
 
         }
         public ActionResult Delete(int id)

@@ -19,11 +19,10 @@ namespace GestionEmploi.App_Start
             
            
             container.RegisterType<IDAO<Niveau>, NiveauService>();
-            container.RegisterType<IFiliereService, FiliereService>();
+            container.RegisterType<IDAO<Filiere>, FiliereService>();
             container.RegisterType<IProfessorService, ProfessorService>();
             container.RegisterType<ICourService, CourService>();
 
-      container.RegisterType<IFiliereService, FiliereService>();
       container.RegisterType<ISemaineService, SemainService>();
       container.RegisterType<IDAO<Local>, LocalService>();
 

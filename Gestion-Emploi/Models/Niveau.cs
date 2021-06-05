@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 
 namespace GestionEmploi.Models
 {
@@ -17,7 +18,7 @@ namespace GestionEmploi.Models
     [ForeignKey("Filiere")]
     public int FiliereId { get; set; }
     public virtual Filiere Filiere { get; set; }
-
-    public virtual List<Emplois> Emplois{ get; set; }
+    [ScriptIgnore]
+    public List<Emplois> Emplois{ get; set; }
   }
 }

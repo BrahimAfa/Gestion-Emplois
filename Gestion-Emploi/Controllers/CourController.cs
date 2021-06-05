@@ -39,7 +39,7 @@ namespace GestionEmploi.Controllers
         {
             dao.create(cour);
             return RedirectToAction("ListCour");
-        }
+    }
 
         public ActionResult Delete(int id)
         {

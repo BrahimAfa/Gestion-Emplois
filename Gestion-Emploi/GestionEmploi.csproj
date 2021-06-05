@@ -154,7 +154,6 @@
     <Compile Include="Controllers\AcceuilController.cs" />
     <Compile Include="Controllers\CourController.cs" />
     <Compile Include="Controllers\FiliereController.cs" />
-
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NiveauController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
@@ -175,6 +174,10 @@
     <Compile Include="Migrations\202105291641502_InitialCreate1.designer.cs">
       <DependentUpon>202105291641502_InitialCreate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106050047121_afterMergeWitOussama.cs" />
+    <Compile Include="Migrations\202106050047121_afterMergeWitOussama.designer.cs">
+      <DependentUpon>202106050047121_afterMergeWitOussama.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Annee.cs" />
     <Compile Include="Models\Cour.cs" />
@@ -188,10 +191,14 @@
     <Compile Include="Models\Seance.cs" />
     <Compile Include="Models\Semaine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ICourService.cs" />
+    <Compile Include="Services\Impl\CourService.cs" />
     <Compile Include="Services\Impl\FiliereService.cs" />
     <Compile Include="Services\IDAO.cs" />
     <Compile Include="Services\IFiliereService.cs" />
     <Compile Include="Services\Impl\LocalService.cs" />
+    <Compile Include="Services\Impl\NiveauService.cs" />
+    <Compile Include="Services\Impl\ProfessorService.cs" />
     <Compile Include="Services\Impl\SemainService.cs" />
     <Compile Include="Services\IProfessorService.cs" />
     <Compile Include="Services\ISemaineService.cs" />
@@ -327,6 +334,18 @@
     <Content Include="Views\Semaine\SemaineList.cshtml" />
     <Content Include="Views\Local\Local.cshtml" />
     <Content Include="Views\Local\LocalList.cshtml" />
+    <Content Include="Views\Cour\AddCour.cshtml" />
+    <Content Include="Views\Cour\EditeCour.cshtml" />
+    <Content Include="Views\Cour\ListCour.cshtml" />
+    <Content Include="Views\Filiere\Create.cshtml" />
+    <Content Include="Views\Filiere\Edit.cshtml" />
+    <Content Include="Views\Filiere\Filiere.cshtml" />
+    <Content Include="Views\Niveau\Create.cshtml" />
+    <Content Include="Views\Niveau\Edit.cshtml" />
+    <Content Include="Views\Niveau\Niveau.cshtml" />
+    <Content Include="Views\Professor\AddProfessor.cshtml" />
+    <Content Include="Views\Professor\EditeProfessor.cshtml" />
+    <Content Include="Views\Professor\ListProfessor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -346,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105291641502_InitialCreate1.resx">
       <DependentUpon>202105291641502_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106050047121_afterMergeWitOussama.resx">
+      <DependentUpon>202106050047121_afterMergeWitOussama.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
