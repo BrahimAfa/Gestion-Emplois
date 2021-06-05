@@ -17,6 +17,7 @@ namespace GestionEmploi.App_Start
     DbSet<Emplois> Emplois { get; set; }
     DbSet<Filiere> Filieres { get; set; }
     DbSet<Local> Locals { get; set; }
+    DbSet <Group> Groupes { get; set; }
     DbSet<Niveau> Niveaux { get; set; }
     DbSet<Professor> Professors { get; set; }
     DbSet<Seance> Seances { get; set; }
