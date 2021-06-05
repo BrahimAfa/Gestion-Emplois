@@ -6,7 +6,7 @@ using GestionEmploi.App_Start;
 using GestionEmploi.Models;
 namespace GestionEmploi.Services
 {
-  public class FiliereService : IFiliereService
+  public class FiliereService : IDAO<Filiere>
   {
     IDbContext db;
     public FiliereService(IDbContext db)
@@ -15,13 +15,19 @@ namespace GestionEmploi.Services
     }
     public bool create(Filiere entity)
     {
-      throw new NotImplementedException();
-    }
+                db.Filieres.Add(entity);
+            return db.SaveChanges() > 0;
+        }
 
     public bool delete(int id)
     {
-      throw new NotImplementedException();
-    }
+
+            Filiere filiere = db.Filieres.Find(id);
+            db.Filieres.Remove(filiere);
+            db.SaveChanges();
+            return true;
+    
+        }
 
     public List<Filiere> getAll()
     {
@@ -35,17 +41,15 @@ namespace GestionEmploi.Services
 
     public Filiere getById(int id)
     {
-      throw new NotImplementedException();
-    }
+            Filiere f = db.Filieres.SingleOrDefault(x => x.FiliereId == id);
+            return f;
 
-    public Filiere getByName(string name)
-    {
-      throw new NotImplementedException();
-    }
+        }
 
-    public bool update(Filiere entity)
+        public bool update(Filiere entity)
     {
-      throw new NotImplementedException();
-    }
+            db.SaveChanges();
+            return true;
+        }
   }
 }

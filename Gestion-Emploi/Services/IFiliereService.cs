@@ -9,5 +9,6 @@ namespace GestionEmploi.Services
   public interface IFiliereService : IDAO<Filiere>
   {
     Filiere getByDate(DateTime d);
+    
   }
 }
