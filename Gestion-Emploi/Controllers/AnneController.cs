@@ -22,7 +22,7 @@ namespace GestionEmploi.Controllers
             this.db = db;
         }
         // GET: Anne+
-        public ActionResult AJouter_Annee()
+        public ActionResult Index()
         {
 
             List<Annee> liste = dao.getAll();
@@ -37,7 +37,7 @@ namespace GestionEmploi.Controllers
         {
             Console.WriteLine(id);
             dao.delete(id);
-            return RedirectToAction("AJouter_Annee");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Create()
@@ -54,7 +54,7 @@ namespace GestionEmploi.Controllers
             Debug.WriteLine(an);
             var j = dao.create(an);
             Debug.WriteLine(j);
-            return RedirectToAction("AJouter_Annee");
+            return RedirectToAction("Index");
         }
 
         
@@ -80,7 +80,7 @@ namespace GestionEmploi.Controllers
                     annn.DateFin = annee.DateFin;
                     dao.update(annn);
                 
-      return RedirectToAction("AJouter_Annee");
+      return RedirectToAction("Index");
 
     }
 }

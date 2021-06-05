@@ -40,7 +40,7 @@ namespace GestionEmploi.Controllers
         }
 
 
-        public ActionResult ListProfessor()
+        public ActionResult Index()
         {
             List<Professor> professors = dao.getAll();
             ViewData["list"] = professors;
@@ -49,7 +49,7 @@ namespace GestionEmploi.Controllers
         public ActionResult Delete(int id)
         {
             dao.delete(id);
-            return RedirectToAction("ListProfessor");
+            return RedirectToAction("Index");
         }
 
         public ActionResult EditeProfessor(int id)
@@ -69,7 +69,7 @@ namespace GestionEmploi.Controllers
                 dao.update(profUpdate);
                
           
-            return RedirectToAction("ListProfessor");
+            return RedirectToAction("Index");
         }
     }
 }

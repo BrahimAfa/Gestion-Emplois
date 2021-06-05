@@ -22,7 +22,12 @@ namespace GestionEmploi.Services.Impl
              return db.SaveChanges() >0 ;
         }
 
-        public bool delete(int id)
+    public bool create(List<Group> entity)
+    {
+      throw new NotImplementedException();
+    }
+
+    public bool delete(int id)
         {
             Group Gr = db.Groupes.Find(id);
             db.Groupes.Remove(Gr);

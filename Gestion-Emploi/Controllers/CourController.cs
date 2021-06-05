@@ -19,7 +19,7 @@ namespace GestionEmploi.Controllers
         }
 
 
-        public ActionResult ListCour()
+        public ActionResult Index()
         {
             List<Cour> cours = dao.getAll();
             ViewData["list"] = cours;
@@ -38,13 +38,13 @@ namespace GestionEmploi.Controllers
         public ActionResult AddCour(Cour cour)
         {
             dao.create(cour);
-            return RedirectToAction("ListCour");
+            return RedirectToAction("Index");
     }
 
         public ActionResult Delete(int id)
         {
             dao.delete(id);
-            return RedirectToAction("ListCour");
+            return RedirectToAction("Index");
         }
 
         public ActionResult EditeCour(int id)

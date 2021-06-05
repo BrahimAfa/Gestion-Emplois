@@ -26,7 +26,12 @@ namespace GestionEmploi.Services.Impl
 
         }
 
-        public bool delete(int id)
+    public bool create(List<Annee> entity)
+    {
+      throw new NotImplementedException();
+    }
+
+    public bool delete(int id)
         {
             Annee An = db.Annees.Find(id);
             db.Annees.Remove(An);

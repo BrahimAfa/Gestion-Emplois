@@ -40,15 +40,15 @@ namespace GestionEmploi.Controllers
             Debug.WriteLine(gr);
             var j = dao.create(gr);
             Debug.WriteLine(j);
-            return RedirectToAction("Ajouter_group");
+            return RedirectToAction("Index");
         }
 
 
-        public ActionResult Ajouter_group()
+        public ActionResult Index()
         {
             List<Group> liste = dao.getAll();
             ViewData["list"] = liste;
-            return View("Ajouter_group");
+            return View();
         }
 
 
@@ -58,7 +58,7 @@ namespace GestionEmploi.Controllers
         {
             Console.WriteLine(id);
             dao.delete(id);
-            return RedirectToAction("Ajouter_group");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Modifier_Gr(int id)
@@ -81,7 +81,7 @@ namespace GestionEmploi.Controllers
 
             dao.update(gr);
 
-            return RedirectToAction("Ajouter_group");
+            return RedirectToAction("Index");
 
 
         }

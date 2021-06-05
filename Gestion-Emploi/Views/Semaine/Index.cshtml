@@ -1,0 +1,33 @@
+﻿@model List<GestionEmploi.Models.Semaine>
+@{
+    ViewBag.Title = "SemaineList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste des semaines </h2>
+<table class="table table-hover">
+    <tr class="btn-primary">
+        <th>ID Semaine</th>
+        <th>Libellé</th>
+        <th>Date de début</th>
+        <th>Date de fin</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SemaineId</td>
+            <td>@item.libelle</td>
+            <td>@item.DateDebut</td>
+            <td>@item.DateFin</td>
+            <td>
+                <a href="@Url.Action("Semaine",new { item.SemaineId,item.libelle,item.DateDebut,item.DateFin})" class="btn btn-success">Edit</a>
+                <a href="@Url.Action("Delete",new { id = item.SemaineId})" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+

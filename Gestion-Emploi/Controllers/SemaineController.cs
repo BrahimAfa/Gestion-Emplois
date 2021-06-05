@@ -56,10 +56,10 @@ namespace GestionEmploi.Controllers
                 
             }
             
-            return View("Semaine");
+            return View("Index");
         }
 
-        public ActionResult SemaineList()
+        public ActionResult Index()
         {
             var list = serv.getAll();
             return View(list);
@@ -69,7 +69,7 @@ namespace GestionEmploi.Controllers
         {
             serv.delete(id);
             var list = serv.getAll();
-            return View("SemaineList", list);
+            return View("Index", list);
         }
     }
 }

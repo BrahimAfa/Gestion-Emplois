@@ -20,7 +20,7 @@ namespace GestionEmploi.Controllers
         }
         
         // GET: Filiere
-        public ActionResult Filiere()
+        public ActionResult Index()
         {
              List<Filiere> liste = dao.getAll();
             ViewData["list"] = liste;
@@ -31,7 +31,7 @@ namespace GestionEmploi.Controllers
         public ActionResult Delete(int id)
         {
             dao.delete(id);
-            return RedirectToAction("Filiere");
+            return RedirectToAction("Index");
         }
         public ActionResult Edit(int id)
         {
@@ -39,11 +39,9 @@ namespace GestionEmploi.Controllers
             return View(filiere);
 
         }
-        public ActionResult Create()
-        {
 
-            
-            
+        public ActionResult Create()
+        {   
             return View("Create");
         }
        [HttpPost]
@@ -58,7 +56,7 @@ namespace GestionEmploi.Controllers
                 dao.create(f);
             }
            
-            return RedirectToAction("Create");
+            return RedirectToAction("Index");
 
         }
         [HttpPost]
@@ -68,7 +66,7 @@ namespace GestionEmploi.Controllers
             Filiere filiere1 = dao.getById(filiere.FiliereId);
             filiere1.Libelle = filiere.Libelle;
             dao.update(filiere1);
-            return RedirectToAction("Filiere");
+            return RedirectToAction("Index");
 
         }
 

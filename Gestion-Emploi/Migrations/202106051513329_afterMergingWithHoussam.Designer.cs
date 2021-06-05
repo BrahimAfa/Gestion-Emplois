@@ -7,13 +7,13 @@ namespace GestionEmploi.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialCreate_v2 : IMigrationMetadata
+    public sealed partial class afterMergingWithHoussam : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate_v2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(afterMergingWithHoussam));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106031551194_InitialCreate_v2"; }
+            get { return "202106051513329_afterMergingWithHoussam"; }
         }
         
         string IMigrationMetadata.Source

@@ -27,7 +27,8 @@ namespace GestionEmploi.App_Start
       container.RegisterSingleton<IDAO<DetailEmplois>, DetailEmploisService>();
       container.RegisterType<ISemaineService, SemainService>();
       container.RegisterType<IDAO<Local>, LocalService>();
-
+      container.RegisterType<IDAO<Group>, GroupService>();
+      container.RegisterType<IDAO<Annee>, AnneeService>();
       DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
         }

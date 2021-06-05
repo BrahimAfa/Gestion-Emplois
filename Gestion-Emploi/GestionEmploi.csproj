@@ -181,9 +181,9 @@
     <Compile Include="Migrations\202106050047121_afterMergeWitOussama.designer.cs">
       <DependentUpon>202106050047121_afterMergeWitOussama.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106031551194_InitialCreate_v2.cs" />
-    <Compile Include="Migrations\202106031551194_InitialCreate_v2.designer.cs">
-      <DependentUpon>202106031551194_InitialCreate_v2.cs</DependentUpon>
+    <Compile Include="Migrations\202106051513329_afterMergingWithHoussam.cs" />
+    <Compile Include="Migrations\202106051513329_afterMergingWithHoussam.designer.cs">
+      <DependentUpon>202106051513329_afterMergingWithHoussam.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Annee.cs" />
@@ -496,28 +496,28 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Acceuil\Index.cshtml" />
     <Content Include="Views\Semaine\Semaine.cshtml" />
-    <Content Include="Views\Semaine\SemaineList.cshtml" />
+    <Content Include="Views\Semaine\Index.cshtml" />
     <Content Include="Views\Local\Local.cshtml" />
-    <Content Include="Views\Local\LocalList.cshtml" />
+    <Content Include="Views\Local\Index.cshtml" />
     <Content Include="Views\Cour\AddCour.cshtml" />
     <Content Include="Views\Cour\EditeCour.cshtml" />
-    <Content Include="Views\Cour\ListCour.cshtml" />
+    <Content Include="Views\Cour\Index.cshtml" />
     <Content Include="Views\Filiere\Create.cshtml" />
     <Content Include="Views\Filiere\Edit.cshtml" />
-    <Content Include="Views\Filiere\Filiere.cshtml" />
+    <Content Include="Views\Filiere\Index.cshtml" />
     <Content Include="Views\Niveau\Create.cshtml" />
     <Content Include="Views\Niveau\Edit.cshtml" />
-    <Content Include="Views\Niveau\Niveau.cshtml" />
+    <Content Include="Views\Niveau\Index.cshtml" />
     <Content Include="Views\Professor\AddProfessor.cshtml" />
     <Content Include="Views\Professor\EditeProfessor.cshtml" />
-    <Content Include="Views\Professor\ListProfessor.cshtml" />
+    <Content Include="Views\Professor\Index.cshtml" />
     <Content Include="Views\Emplois\Index.cshtml" />
     <Content Include="Views\Emplois\Emplois.cshtml" />
-    <Content Include="Views\Anne\AJouter_Annee.cshtml" />
+    <Content Include="Views\Anne\Index.cshtml" />
     <Content Include="Views\Anne\Create.cshtml" />
     <Content Include="Views\Anne\EDIT.cshtml" />
     <Content Include="Views\Group\Cree_Group.cshtml" />
-    <Content Include="Views\Group\Ajouter_group.cshtml" />
+    <Content Include="Views\Group\Index.cshtml" />
     <Content Include="Views\Group\Modifier_Gr.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -533,9 +533,6 @@
     <EmbeddedResource Include="Migrations\202105200056429_init.resx">
       <DependentUpon>202105200056429_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106031551194_InitialCreate_v2.resx">
-      <DependentUpon>202106031551194_InitialCreate_v2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105281235048_InitialCreate.resx">
       <DependentUpon>202105281235048_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -544,6 +541,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106050047121_afterMergeWitOussama.resx">
       <DependentUpon>202106050047121_afterMergeWitOussama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106051513329_afterMergingWithHoussam.resx">
+      <DependentUpon>202106051513329_afterMergingWithHoussam.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

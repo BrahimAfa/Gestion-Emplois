@@ -51,10 +51,10 @@ namespace GestionEmploi.Controllers
                 }
             }
             
-            return View("Local");
+            return View("Index");
         }
 
-        public ActionResult LocalList()
+        public ActionResult Index()
         {
             var loc = serv.getAll();
             return View(loc);
@@ -65,7 +65,7 @@ namespace GestionEmploi.Controllers
         {
             serv.delete(id);
             var list = serv.getAll();
-            return View("LocalList", list);
+            return View("Index", list);
         }
     }
 }

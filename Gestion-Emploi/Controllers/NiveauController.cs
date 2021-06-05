@@ -21,7 +21,7 @@ namespace GestionEmploi.Controllers
             this.daof = daof;
         }
 
-        public ActionResult Niveau()
+        public ActionResult Index()
         {
             List<Niveau> liste = dao.getAll();
             ViewData["list"] = liste;
@@ -52,13 +52,13 @@ namespace GestionEmploi.Controllers
             dao.create(n);
       List<Niveau> liste = dao.getAll();
       ViewData["list"] = liste;
-      return View("Niveau",liste);
+      return View("Index", liste);
 
         }
         public ActionResult Delete(int id)
         {
             dao.delete(id);
-            return RedirectToAction("Niveau");
+            return RedirectToAction("Index");
         }
         public ActionResult Edit(int id)
         {
@@ -70,13 +70,12 @@ namespace GestionEmploi.Controllers
         [HttpPost]
         public ActionResult Update(Niveau niveau)
         {
-
             Niveau niveau1 = dao.getById(niveau.NiveauId);
             niveau1.Code = niveau.Code;
             niveau1.libelle = niveau.libelle;
             niveau1.FiliereId = niveau.FiliereId;
             dao.update(niveau1);
-            return RedirectToAction("Niveau");
+            return RedirectToAction("Index");
 
         }
 
