@@ -353,6 +353,8 @@
     <Content Include="Views\Professor\AddProfessor.cshtml" />
     <Content Include="Views\Professor\EditeProfessor.cshtml" />
     <Content Include="Views\Professor\ListProfessor.cshtml" />
+    <Content Include="Views\Emplois\Index.cshtml" />
+    <Content Include="Views\Emplois\Emplois.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 
 namespace GestionEmploi.Models
 {
@@ -18,12 +19,13 @@ namespace GestionEmploi.Models
 
     [ForeignKey("Annee")]
     public int AnneeId { get; set; }
-    public Annee Annee { get; set; }
+    public virtual Annee Annee { get; set; }
 
     [ForeignKey("Semaine")]
     public int SemaineId { get; set; }
-    public Semaine Semaine { get; set; }
+    public virtual Semaine Semaine { get; set; }
 
+    [ScriptIgnore]
     public List<DetailEmplois> DetailEmplois { get; set; }
 
     public override string ToString()

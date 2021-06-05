@@ -20,7 +20,12 @@ namespace GestionEmploi.Services.Impl
             return db.SaveChanges() > 0;
         }
 
-        public bool delete(int id)
+    public bool create(List<Niveau> entity)
+    {
+      throw new NotImplementedException();
+    }
+
+    public bool delete(int id)
         {
             Niveau niveau = db.Niveaux.Find(id);
             db.Niveaux.Remove(niveau);

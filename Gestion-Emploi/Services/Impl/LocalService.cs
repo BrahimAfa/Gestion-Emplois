@@ -20,7 +20,12 @@ namespace GestionEmploi.Services.Impl
             return db.SaveChanges() > 0;
         }
 
-        public bool delete(int id)
+    public bool create(List<Local> entity)
+    {
+      throw new NotImplementedException();
+    }
+
+    public bool delete(int id)
         {
             var loc = db.Locals.Where<Local>(x => x.LocalId == id).First();
             db.Locals.Remove(loc);

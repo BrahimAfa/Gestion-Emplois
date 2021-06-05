@@ -22,7 +22,12 @@ namespace GestionEmploi.Services.Impl
             return db.SaveChanges() > 0;
         }
 
-        public bool delete(int id)
+    public bool create(List<Cour> entity)
+    {
+      throw new NotImplementedException();
+    }
+
+    public bool delete(int id)
         {
             var cour = db.Cours.Where<Cour>(x => x.CourId == id).First();
             db.Cours.Remove(cour);

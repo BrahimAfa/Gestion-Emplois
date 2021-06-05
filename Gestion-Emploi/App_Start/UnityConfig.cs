@@ -16,13 +16,15 @@ namespace GestionEmploi.App_Start
 
             var container = new UnityContainer();
             container.RegisterSingleton<IDbContext, GestionEmploisDbContext>();
-            
-           
-            container.RegisterType<IDAO<Niveau>, NiveauService>();
+
+      container.RegisterType<IDAO<Seance>, SeanceService>();
+
+      container.RegisterType<IDAO<Niveau>, NiveauService>();
             container.RegisterType<IDAO<Filiere>, FiliereService>();
             container.RegisterType<IProfessorService, ProfessorService>();
             container.RegisterType<ICourService, CourService>();
-
+      container.RegisterSingleton<IDAO<Emplois>, EmploisService>();
+      container.RegisterSingleton<IDAO<DetailEmplois>, DetailEmploisService>();
       container.RegisterType<ISemaineService, SemainService>();
       container.RegisterType<IDAO<Local>, LocalService>();
 

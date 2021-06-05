@@ -242,7 +242,7 @@
     return;
     $.ajax({
       type: "POST",
-      url: "/Home/jsonData",
+      url: "/Emplois/jsonData",
       data: JSON.stringify(data),
       contentType: "application/json; charset=utf-8",
       dataType: "json",
@@ -299,7 +299,7 @@
     }
     $.ajax({
       type: "POST",
-      url: "/Home/deleteSeance",
+      url: "/Emplois/deleteSeance",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({ id: node.data().id }),
       dataType: "json",
@@ -357,7 +357,7 @@
   let annnes = ['2019/2018','2020/2021']
   $.ajax({
     type: "GET",
-    url: "/Home/Filieres",
+    url: "/Emplois/Filieres",
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function (response) {
@@ -379,7 +379,7 @@
 
   $.ajax({
     type: "GET",
-    url: "/Home/Semains",
+    url: "/Emplois/Semains",
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function (response) {
@@ -400,7 +400,7 @@
   });
   $.ajax({
     type: "GET",
-    url: "/Home/Annnees",
+    url: "/Emplois/Annnees",
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function (response) {
@@ -445,7 +445,7 @@
 
   $.ajax({
     type: "GET",
-    url: "/Home/Locals",
+    url: "/Emplois/Locals",
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function (response) {
@@ -535,7 +535,7 @@
       if ($(selectedInput).attr("name") === "FiliereId") {
         $.ajax({
           type: "GET",
-          url: "/Home/Niveaux/" + selectedInput.dataset.id,
+          url: "/Emplois/Niveaux/" + selectedInput.dataset.id,
           contentType: "application/json; charset=utf-8",
           dataType: "json",
           success: function (response) {
@@ -556,7 +556,7 @@
       } else if ($(selectedInput).attr("name") === "NiveauId"){
         $.ajax({
           type: "GET",
-          url: "/Home/Cours/" + selectedInput.dataset.id,
+          url: "/Emplois/Cours/" + selectedInput.dataset.id,
           contentType: "application/json; charset=utf-8",
           dataType: "json",
           success: function (response) {
@@ -599,7 +599,7 @@
 
       $.ajax({
         type: "POST",
-        url: "/Home/updateDetailEmplois",
+        url: "/Emplois/updateDetailEmplois",
         data: JSON.stringify(currentSeance),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
