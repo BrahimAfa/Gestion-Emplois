@@ -154,7 +154,6 @@
     <Compile Include="Controllers\AcceuilController.cs" />
     <Compile Include="Controllers\CourController.cs" />
     <Compile Include="Controllers\FiliereController.cs" />
-
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NiveauController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
@@ -164,6 +163,18 @@
     <Compile Include="Migrations\202105200056429_init.cs" />
     <Compile Include="Migrations\202105200056429_init.designer.cs">
       <DependentUpon>202105200056429_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106041722214_chnagesv2.cs" />
+    <Compile Include="Migrations\202106041722214_chnagesv2.Designer.cs">
+      <DependentUpon>202106041722214_chnagesv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106041904214_chnagesv3.cs" />
+    <Compile Include="Migrations\202106041904214_chnagesv3.Designer.cs">
+      <DependentUpon>202106041904214_chnagesv3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106041934063_chnagesv4.cs" />
+    <Compile Include="Migrations\202106041934063_chnagesv4.Designer.cs">
+      <DependentUpon>202106041934063_chnagesv4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Annee.cs" />
@@ -178,9 +189,13 @@
     <Compile Include="Models\Seance.cs" />
     <Compile Include="Models\Semaine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ICourService.cs" />
+    <Compile Include="Services\Impl\CourService.cs" />
     <Compile Include="Services\Impl\FiliereService.cs" />
     <Compile Include="Services\IDAO.cs" />
     <Compile Include="Services\IFiliereService.cs" />
+    <Compile Include="Services\Impl\NiveauService.cs" />
+    <Compile Include="Services\Impl\ProfessorService.cs" />
     <Compile Include="Services\Impl\SemainService.cs" />
     <Compile Include="Services\IProfessorService.cs" />
     <Compile Include="Utils\Config.cs" />
@@ -231,9 +246,25 @@
     <Content Include="assets\vendor\venobox\venobox.min.css" />
     <Content Include="assets\vendor\venobox\venobox.min.js" />
     <Content Include="assets\vendor\waypoints\jquery.waypoints.min.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\boxicons.min.css" />
+    <Content Include="Content\Filiere.css" />
+    <Content Include="Content\form.css" />
     <Content Include="Content\sidebar.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\boxicons.svg" />
@@ -263,6 +294,10 @@
     <Content Include="assets\vendor\remixicon\remixicon.ttf" />
     <Content Include="assets\vendor\remixicon\remixicon.woff" />
     <Content Include="assets\vendor\remixicon\remixicon.woff2" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\sidebar.js" />
@@ -273,6 +308,24 @@
     <Content Include="fonts\boxicons.ttf" />
     <Content Include="fonts\boxicons.woff" />
     <Content Include="fonts\boxicons.woff2" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -299,6 +352,18 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Acceuil\Index.cshtml" />
+    <Content Include="Views\Cour\AddCour.cshtml" />
+    <Content Include="Views\Cour\EditeCour.cshtml" />
+    <Content Include="Views\Cour\ListCour.cshtml" />
+    <Content Include="Views\Filiere\Create.cshtml" />
+    <Content Include="Views\Filiere\Edit.cshtml" />
+    <Content Include="Views\Filiere\Filiere.cshtml" />
+    <Content Include="Views\Niveau\Create.cshtml" />
+    <Content Include="Views\Niveau\Edit.cshtml" />
+    <Content Include="Views\Niveau\Niveau.cshtml" />
+    <Content Include="Views\Professor\AddProfessor.cshtml" />
+    <Content Include="Views\Professor\EditeProfessor.cshtml" />
+    <Content Include="Views\Professor\ListProfessor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,6 +377,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105200056429_init.resx">
       <DependentUpon>202105200056429_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106041722214_chnagesv2.resx">
+      <DependentUpon>202106041722214_chnagesv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106041904214_chnagesv3.resx">
+      <DependentUpon>202106041904214_chnagesv3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106041934063_chnagesv4.resx">
+      <DependentUpon>202106041934063_chnagesv4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

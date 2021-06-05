@@ -25,15 +25,17 @@
                             <div class="form-input">
                                 <i class="fa fa-user"></i>
                                 @Html.TextBoxFor(x => x.Libelle, new { placeholder = "Libelle", @class = "form-control" })
-
+                                @Html.ValidationMessageFor(x => x.Libelle, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-input">
                                 <i class="fa fa-user"></i>
                                 @Html.DropDownListFor(x => x.ResponsableId, ViewBag.profs as SelectList, "Selectioner le responsable", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ResponsableId, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-input">
                                 <i class="fa fa-user"></i>
                                 @Html.DropDownListFor(x => x.NiveauId, ViewBag.niveaux as SelectList, "Selectioner le niveaux", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.NiveauId, "", new { @class = "text-danger" })
                             </div>
                             <div> <input type="submit" value="Ajouter" class="btn btn-primary mt-4 signup" /> </div>
                         </div>

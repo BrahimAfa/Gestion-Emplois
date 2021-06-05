@@ -7,7 +7,7 @@ using GestionEmploi.Models;
 namespace GestionEmploi.Services
 {
   public class FiliereService : IDAO<Filiere>
-  {
+    {
     IDbContext db;
     public FiliereService(IDbContext db)
     {

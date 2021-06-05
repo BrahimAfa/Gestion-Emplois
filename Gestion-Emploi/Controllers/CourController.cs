@@ -41,7 +41,7 @@ namespace GestionEmploi.Controllers
             return RedirectToAction("ListCour");
         }
 
-        public ActionResult Delete(int id)
+        public ActionResult DeleteCour(int id)
         {
             dao.delete(id);
             return RedirectToAction("ListCour");
@@ -49,8 +49,22 @@ namespace GestionEmploi.Controllers
 
         public ActionResult EditeCour(int id)
         {
+            ViewBag.profs = new SelectList(db.Professors, "ProfessorId", "LastName");
+            ViewBag.niveaux = new SelectList(db.Niveaux, "NiveauId", "libelle");
             Cour cour = dao.getById(id);
             return View(cour);
+        }
+        [HttpPost]
+        public ActionResult EditCour(Cour cour)
+        {
+
+            Cour cour1 = dao.getById(cour.CourId);
+            cour1.Libelle = cour.Libelle;
+            cour1.NiveauId = cour.NiveauId;
+            cour1.ResponsableId = cour.ResponsableId;
+
+            dao.update(cour1);
+            return RedirectToAction("ListCour");
         }
     }
 }

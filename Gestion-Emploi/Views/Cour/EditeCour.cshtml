@@ -4,5 +4,51 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EditeCour</h2>
+@Styles.Render("~/Content/form.css")
+
+
+@using (Html.BeginForm("EditCour", "Cour", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            @if (Model != null && Model.CourId > 0)
+            {
+                @Html.HiddenFor(x => x.CourId)
+            }
+            <div class="container mt-5 mb-5">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card px-5 py-5">
+                            <span class="circle"><i class="fa fa-check"></i></span>
+                            <h5 class="mt-3">Modifier un Cour </h5>
+                            <div class="form-input">
+                                <i class="fa fa-user"></i>
+                                @Html.TextBoxFor(x => x.Libelle, new { placeholder = "Libelle", @class = "form-control" })
+
+                            </div>
+                            <div class="form-input">
+                                <i class="fa fa-user"></i>
+                                @Html.DropDownListFor(x => x.ResponsableId, ViewBag.profs as SelectList, "Selectioner le responsable", new { @class = "form-control" })
+                            </div>
+                            <div class="form-input">
+                                <i class="fa fa-user"></i>
+                                @Html.DropDownListFor(x => x.NiveauId, ViewBag.niveaux as SelectList, "Selectioner le niveaux", new { @class = "form-control" })
+                            </div>
+                            <div> <input type="submit" value="Modifier" class="btn btn-primary mt-4 signup" /> </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+}
 

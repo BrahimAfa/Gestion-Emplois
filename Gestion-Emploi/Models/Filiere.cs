@@ -12,8 +12,8 @@ namespace GestionEmploi.Models
     [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
     [Key]
     public int FiliereId { get; set; }
-    [Required( ErrorMessage = "Please Provide Last Name")]
-        public string Libelle { get; set; }
+    [Required]
+    public string Libelle { get; set; }
 
   }
 }

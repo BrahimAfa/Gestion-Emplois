@@ -7,14 +7,14 @@ using System.Data;
 
 using GestionEmploi.Models;
 using GestionEmploi.Utils;
+using System.Data.Entity.Infrastructure;
 
 namespace GestionEmploi.App_Start {
   public class GestionEmploisDbContext : DbContext,IDbContext
   {
     static Config config = FileUtils.LoadJson();
-    public GestionEmploisDbContext():base(config.ConnectionString)
+    public GestionEmploisDbContext():base("Data Source=DESKTOP-SF221G4\\SQLEXPRESS;Initial Catalog=GestionEmlpois;Integrated Security=true;MultipleActiveResultSets=true")
     {
-    
     }
 
     public virtual DbSet<Annee> Annees { get ; set ; }
@@ -35,5 +35,5 @@ namespace GestionEmploi.App_Start {
         .WithMany()
         .WillCascadeOnDelete(false);
     }
-  }
+    }
 }

@@ -20,16 +20,11 @@ namespace GestionEmploi.Controllers
         }
 
         
-         public ActionResult AddProfessor(Professor professor)
+         public ActionResult AddProfessor()
         {
-            if (professor != null)
-            {
-                return View(professor);
-            }
-            else
-            {
+            
                 return View();
-            }
+            
            
         }
         [HttpPost]

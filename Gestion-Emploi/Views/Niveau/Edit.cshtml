@@ -24,16 +24,19 @@
                             <div class="form-input">
                                 <i class="fa fa-user"></i>
                                 @Html.TextBoxFor(x => x.libelle, new { placeholder = "Libelle", @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.libelle, "", new { @class = "text-danger" })
 
                             </div>
                             <div class="form-input">
                                 <i class="fa fa-user"></i>
                                 @Html.TextBoxFor(x => x.Code, new { placeholder = "Code", @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Code, "", new { @class = "text-danger" })
 
                             </div>
                             <div class="form-input">
                                 <i class="fa fa-user"></i>
                                 @Html.DropDownListFor(x => x.FiliereId, ViewBag.filieres as SelectList, "Selecte filierer", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.FiliereId, "", new { @class = "text-danger" })
 
                             </div>
                             <div> <input type="submit" value="Edite" class="btn btn-primary mt-4 signup" /> </div>

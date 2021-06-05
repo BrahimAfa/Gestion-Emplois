@@ -21,17 +21,20 @@
                             <div class="form-input">
                                 <label>Nom</label>
                                 @Html.TextBoxFor(x => x.LastName, new { placeholder = "ecrire le nom", @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-input">
                                 <label>Prenom</label>
                                 @Html.TextBoxFor(x => x.FirstName, new { placeholder = "ecrire le prenom", @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-input">
                                 <label>Email</label>
                                 @Html.TextBoxFor(x => x.Email, new { placeholder = "ecrire l'email", @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
                             </div>
                             <div>
-                                <input type="submit" value="Update" class="btn btn-primary mt-4 signup" />
+                                <input type="submit" value="Ajouter" class="btn btn-primary mt-4 signup" />
                             </div>
                         </div>
 
