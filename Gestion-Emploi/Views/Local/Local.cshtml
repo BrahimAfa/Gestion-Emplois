@@ -3,12 +3,14 @@
     ViewBag.Title = "Local";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<br />
 <h2>Local</h2>
-
+<a href="@Url.Action("LocalList")" class="btn btn-primary" style="margin:400 0 0 0;">Liste des locaux</a>
+<br />
+<br />
 @using (Html.BeginForm("LocalAdd", "Local", FormMethod.Post))
 {
-    <div class="container">
+    <div class="container" style="position:center;width:400px;">
         <div class="form-group">
             @if (Model != null && Model.LocalId > 0)
             {
@@ -29,10 +31,13 @@
             <label>Localisation</label>
             @Html.TextBoxFor(x => x.Localisation, new { @class = "form-control" })
         </div>
-        
+        <br /><br />    
+        <div class="form-group">
             <input type="submit" value="Ajouter" class="btn btn-primary" />
             <input type="reset" value="cancel" class="btn btn-danger" />
+        </div>
         
+
     </div>
 
 }

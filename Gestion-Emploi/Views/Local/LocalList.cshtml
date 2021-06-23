@@ -4,8 +4,13 @@
     ViewBag.Title = "LocalList";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+    <br />
+    <h2>Liste des locaux</h2>
+    <br />
 
-<h2>Liste des locaux</h2>
+    <a href="@Url.Action("Local")" class="btn btn-primary" style="margin:400 0 0 0;">Ajouter un local</a>
+    <br />
+    <br />
 
 <table class="table table-hover">
     <tr class="btn-primary">
@@ -18,17 +23,17 @@
     </tr>
     @foreach (var item in Model)
     {
-<tr>
-    <td>@item.LocalId</td>
-    <td>@item.Libelle</td>
-    <td>@item.Type</td>
-    <td>@item.Capacity</td>
-    <td>@item.Localisation</td>
-    <td>
-        <a href="@Url.Action("Local",new { item.LocalId,item.Libelle,item.Type,item.Capacity,item.Localisation})" class="btn btn-success">Edit</a>
-        <a href="@Url.Action("Delete",new { id = item.LocalId})" class="btn btn-danger">Delete</a>
-    </td>
-</tr>
+        <tr>
+            <td>@item.LocalId</td>
+            <td>@item.Libelle</td>
+            <td>@item.Type</td>
+            <td>@item.Capacity</td>
+            <td>@item.Localisation</td>
+            <td>
+                <a href="@Url.Action("Local",new { item.LocalId,item.Libelle,item.Type,item.Capacity,item.Localisation})" class="btn btn-success">Edit</a>
+                <a href="@Url.Action("Delete",new { id = item.LocalId})" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
     }
 </table>
 

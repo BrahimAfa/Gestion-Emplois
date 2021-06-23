@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Rotativa;
 
 namespace GestionEmploi.Controllers
 {
@@ -61,8 +62,23 @@ namespace GestionEmploi.Controllers
 
         public ActionResult SemaineList()
         {
-            var list = serv.getAll();
-            return View(list);
+            ViewBag.list = serv.getAll();
+            return View();
+        }
+
+        public ActionResult Semainepdf()
+        {
+            return View();
+        }
+
+        public ActionResult SemainepdfImp()
+        {
+            return View();
+        }
+
+        public ActionResult Semainepdff()
+        {
+            return new Rotativa.ActionAsPdf("SemainepdfImp");
         }
 
         public ActionResult Delete(int id)

@@ -35,7 +35,9 @@ namespace GestionEmploi
             //Create bundel for jQueryUI  
             //js  
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                      "~/Scripts/jquery-ui-{version}.js"));
+                      "~/Scripts/jquery-ui-{version}.js",
+                      "~/Scripts/jquery.validate.min.js",
+                "~/Scripts/jquery.validate.unobtrusive.min.js"));
             //css  
             bundles.Add(new StyleBundle("~/Content/cssjqryUi").Include(
                    "~/Content/jquery-ui.css"));

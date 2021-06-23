@@ -3,11 +3,17 @@
     ViewBag.Title = "Semaine";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br />
+<h2>Semaine Information</h2>
 
-<h2>Semaine</h2>
+<a href="@Url.Action("SemaineList")" class="btn btn-primary" style="margin:400 0 0 0;">Liste des semaines</a>
+<br />
+<br />
+
+
 @using (Html.BeginForm("SemaineAdd", "Semaine", FormMethod.Post))
 {
-    <div class="container">
+    <div class="container" style="position:center;width:400px;">
         <div class="form-group">
             @if (Model != null && Model.SemaineId > 0)
             {
@@ -27,8 +33,12 @@
             @Html.ValidationMessageFor(x => x.DateFin, "", new { @class = "text-danger" })
         </div>
 
+        <br /><br />
+        <div style="margin:30 0 0 0;">
             <input type="submit" value="Ajouter" class="btn btn-primary" />
             <input type="reset" value="cancel" class="btn btn-danger" />
+        </div>
+
     </div>
 }
 @section Scripts{
@@ -37,14 +47,14 @@
 
     <script type="text/javascript">
 
-     $(document).ready(function () {
-         $('input[type=datetime]').datepicker({
-             dateFormat: "dd/M/yy",
-             changeMonth: true,
-             changeYear: true,
-             yearRange: "-60:+0"
-         });
+        $(document).ready(function () {
+            $('input[type=datetime]').datepicker({
+                dateFormat: "dd/M/yy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0"
+            });
 
-     });
+        });
     </script>
 }
